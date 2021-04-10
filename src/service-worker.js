@@ -77,7 +77,7 @@ registerRoute(({url}) => url.origin.includes("qorebase.io"), new NetworkFirst({
     })
   ]
 }))
-
+ 
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) => url.origin === self.location.origin && /\.(jpe?g|png)$/i.test(url.pathname), // Customize this strategy as needed, e.g., by changing to CacheFirst.
