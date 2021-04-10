@@ -66,7 +66,30 @@ registerRoute(({url}) => url.origin === 'https://fonts.googleapis.com' || url.or
   plugins: [
     new ExpirationPlugin({maxAgeSeconds: 60 * 60 * 24 * 356, maxEntries: 30})
   ]
-}) )
+}))
+
+registerRoute(({url}) => url.origin.includes("qorebase.io"), new NetworkFirst({
+  cacheName: 'apidata',
+  plugins: [
+    new ExpirationPlugin({
+      maxAgeSeconds: 360,
+      maxEntries: 30
+    })
+  ]
+}))
+
+registerRoute(
+  // Add in any other file extensions or routing criteria as needed.
+  ({ url }) => url.origin === self.location.origin && /\.(jpe?g|png)$/i.test(url.pathname), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  new StaleWhileRevalidate({
+    cacheName: 'apiimages',
+    plugins: [
+      // Ensure that once this runtime cache reaches a maximum size the
+      // least-recently used images are removed.
+      new ExpirationPlugin({ maxEntries: 50 }),
+    ],
+  })
+);
 
 self.addEventListener('install', function(event) {
   console.log("SW Install")
