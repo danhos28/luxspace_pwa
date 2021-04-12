@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const AsideMenu = () => {
-    return (
-        <section className="">
+  return (
+    <section className="">
       <div className="border-t border-b border-gray-200 py-12 mt-16 px-4">
         <div className="flex justify-center mb-8">
           <img
@@ -16,13 +16,19 @@ const AsideMenu = () => {
               <h5 className="text-lg font-semibold mb-2 relative">Overview</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
-                  <a href="/" className="hover:underline py-1 block">Shipping</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    Shipping
+                  </a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">Refund</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    Refund
+                  </a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">Promotion</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    Promotion
+                  </a>
                 </li>
               </ul>
             </div>
@@ -30,13 +36,19 @@ const AsideMenu = () => {
               <h5 className="text-lg font-semibold mb-2 relative">Company</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
-                  <a href="/" className="hover:underline py-1 block">About</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    About
+                  </a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">Career</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    Career
+                  </a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">Contact Us</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    Contact Us
+                  </a>
                 </li>
               </ul>
             </div>
@@ -44,15 +56,19 @@ const AsideMenu = () => {
               <h5 className="text-lg font-semibold mb-2 relative">Explore</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
-                  <a href="/" className="hover:underline py-1 block">Terms & Conds</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    Terms & Conds
+                  </a>
                 </li>
                 <li>
-                 <a href="/" className="hover:underline py-1 block"
-                    >Privacy Policy</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    Privacy Policy
+                  </a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block"
-                    >For Developer</a>
+                  <a href="/" className="hover:underline py-1 block">
+                    For Developer
+                  </a>
                 </li>
               </ul>
             </div>
@@ -88,7 +104,7 @@ const AsideMenu = () => {
         </aside>
       </div>
     </section>
-    )
-}
+  );
+};
 
-export default AsideMenu
+export default AsideMenu;
