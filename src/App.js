@@ -7,10 +7,12 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Offline from "./components/Offline";
+import Splash from "./pages/Splash";
 
 function App() {
   const [items, setItems] = useState([]);
   const [offlineStatus, setOfflineStatus] = useState(!navigator.onLine);
+  const [isLoading, setIsLoading] = useState(true);
 
   function handleOfflineStatus() {
     setOfflineStatus(!navigator.onLine);
@@ -39,6 +41,10 @@ function App() {
     window.addEventListener("online", handleOfflineStatus);
     window.addEventListener("offline", handleOfflineStatus);
 
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
     return function () {
       window.removeEventListener("online", handleOfflineStatus);
       window.removeEventListener("offline", handleOfflineStatus);
@@ -47,14 +53,20 @@ function App() {
 
   return (
     <>
-      {offlineStatus && <Offline />}
-      <Header />
-      <Hero />
-      <Browse />
-      <Arrived items={items} />
-      <Clients />
-      <AsideMenu />
-      <Footer />
+      {isLoading === true ? (
+        <Splash />
+      ) : (
+        <>
+          {offlineStatus && <Offline />}
+          <Header />
+          <Hero />
+          <Browse />
+          <Arrived items={items} />
+          <Clients />
+          <AsideMenu />
+          <Footer />
+        </>
+      )}
     </>
   );
 }
