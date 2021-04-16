@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Offline from "./components/Offline";
 import Splash from "./pages/Splash";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Profile from "./pages/Profile";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -71,4 +73,11 @@ function App() {
   );
 }
 
-export default App;
+export default function Routes() {
+  return (
+    <Router>
+      <Route path="/" exact component={App} />
+      <Route path="/profile" exact component={Profile} />
+    </Router>
+  );
+}
